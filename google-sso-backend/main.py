@@ -1,3 +1,9 @@
+"""Main FastAPI application entry point.
+
+This module sets up the FastAPI application with CORS middleware,
+session middleware for OAuth flow, and includes the authentication router.
+"""
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
@@ -22,7 +28,7 @@ app.add_middleware(
 # Add session middleware for OAuth flow
 app.add_middleware(
     SessionMiddleware,
-    secret_key=os.getenv("SECRET_KEY", "default-secret-key-change-in-production")
+    secret_key=os.getenv("SECRET_KEY", "default-secret-key-change-in-production"),
 )
 
 app.include_router(router)

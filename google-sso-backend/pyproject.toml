@@ -13,3 +13,8 @@ dependencies = [
     "python-jose>=3.5.0",
     "uvicorn>=0.40.0",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0.0",
+]
